@@ -1,20 +1,19 @@
 import {Button, Text, TextInput} from 'react-native-paper';
 import {Container, Form, FormInput} from './styles';
 import {useState} from 'react';
-import {useNavigation} from '@react-navigation/native';
 import {StackNavigation} from '../../routes/auth.routes';
+import {useNavigation} from '@react-navigation/native';
 
-export default function SignInScreen() {
+export default function SignUpScreen() {
   const [state, setState] = useState({
     email: '',
     password: '',
-    name: '',
   });
   const {navigate} = useNavigation<StackNavigation>();
   function changeForm(key: string, form: string): void {}
   return (
     <Container>
-      <Text variant="displayMedium">Login</Text>
+      <Text variant="displayMedium">Cadrasto</Text>
       <Form>
         <FormInput>
           <TextInput
@@ -37,17 +36,17 @@ export default function SignInScreen() {
             mode="contained"
             onPress={() => console.log('Pressed')}
             loading={false}>
-            Login
+            Cadastrar-se
           </Button>
         </FormInput>
         <FormInput>
           <Button
             mode="text"
             textColor="black"
-            onPress={() => navigate('SignUp')}
+            onPress={() => navigate('SignIn')}
             loading={false}
             compact={true}>
-            Cadastrar-se
+            Login
           </Button>
         </FormInput>
       </Form>
