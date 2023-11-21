@@ -47,9 +47,8 @@ export default function Post() {
                     <IconTreeDots />
                   </ButtonOption>
                 }>
-                <Menu.Item onPress={() => {}} title="Item 1" />
-                <Menu.Item onPress={() => {}} title="Item 2" />
-                <Divider />
+                <Menu.Item onPress={() => {}} title="Denunciar" />
+                <Menu.Item onPress={() => {}} title="Editar" />
                 <Menu.Item onPress={() => {}} title="Excluir" />
               </Menu>
             </WrapperOptions>

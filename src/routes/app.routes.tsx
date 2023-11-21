@@ -1,12 +1,19 @@
 import {NavigationProp} from '@react-navigation/native';
 import HomeScreen from '../screens/Home';
 import NewPostScreen from '../screens/NewPost';
-import MyProfileScreen from '../screens/MyProfile';
+import EditMyProfileScreen from '../screens/EditMyProfile';
+import ProfileScreen from '../screens/Profile';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-export type ScreenNames = ['Home', 'NewPost', 'Profile', 'MyProfile']; // type these manually
+export type ScreenNames = [
+  'Home',
+  'NewPost',
+  'Profile',
+  'MyProfile',
+  'EditProfile',
+]; // type these manually
 export type RootStackParamList = Record<ScreenNames[number], undefined>;
 export type StackNavigation = NavigationProp<RootStackParamList>;
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -32,7 +39,8 @@ function StackMyProfile() {
         screenOptions={{
           headerShown: false,
         }}>
-        <Stack.Screen name="MyProfile" component={MyProfileScreen} />
+        <Stack.Screen name="MyProfile" component={ProfileScreen} />
+        <Stack.Screen name="EditProfile" component={EditMyProfileScreen} />
       </Stack.Navigator>
     </>
   );

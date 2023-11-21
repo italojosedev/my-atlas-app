@@ -9,8 +9,11 @@ import {
   Scroll,
 } from './styles';
 import Post from '../../components/Post';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigation} from '../../routes/app.routes';
 
 export default function MyProfile() {
+  const {navigate} = useNavigation<StackNavigation>();
   return (
     <>
       <Container>
@@ -30,8 +33,15 @@ export default function MyProfile() {
             </WrapperTopRight>
           </WrapperTop>
           <WrapperEdit>
-            <Button mode="outlined" onPress={() => {}}>
+            <Button
+              mode="outlined"
+              onPress={() => {
+                navigate('EditProfile');
+              }}>
               Editar Perfil
+            </Button>
+            <Button mode="contained" onPress={() => {}}>
+              Seguir
             </Button>
           </WrapperEdit>
           <Divider />

@@ -33,7 +33,7 @@ export default function NewPost() {
         <WrapperText>
           <TextInput
             mode="outlined"
-            label="Escrevea aqui"
+            label="Escreva aqui"
             value={text}
             onChangeText={text => setText(text)}
             multiline
